@@ -1,0 +1,44 @@
+<div class="section" ng-controller="AddNewPostController">
+    <div class="container">
+        <div class="row">
+
+            <h3>Make new post</h3>
+
+            <input type="text" placeholder="Enter Post Title Here" class="form-control" ng-model="postTitle">
+            <br>
+
+            <div text-angular
+                 ng-required="true"
+                 ng-model="postContent"
+                 ta-toolbar="[
+      ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'pre', 'quote'],
+      ['bold', 'italics', 'underline', 'strikeThrough', 'ul', 'ol', 'redo', 'undo', 'clear'],
+      ['justifyLeft', 'justifyCenter', 'justifyRight', 'indent', 'outdent'],
+      ['html', 'insertImage','insertLink', 'insertVideo']]"></div>
+            <br>
+            <button class="btn btn-primary" ng-click="previewContent()">Preview</button>
+            <button class="btn btn-default">Save as draft</button>
+            <button class="btn btn-success">Save and publish</button>
+
+        </div>
+
+        <!-- Viewing the sample post data-->
+        <hr>
+        <div class="row" ng-show="showPreview">
+            <div class="pricing-wrapper col-md-12">
+                <div class="pricing-plan">
+                    <!--Pricing Plan Ribbon -->
+                    <div class="ribbon-wrapper">
+                        <div class="price-ribbon ribbon-green">Preview</div>
+                    </div>
+                    <h1 class="pricing-plan-title" style="text-align: left">{{title}}</h1>
+
+                    <div ng-bind-html="content">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
