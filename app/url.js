@@ -8,5 +8,7 @@ var debug = true;
 
 var host = {
     post: mainHost + '/post',
-    login: mainHost + '/login'
+    login: mainHost + '/login',
+    signup: mainHost + '/signup',
+    users : mainHost + '/users'
 };
