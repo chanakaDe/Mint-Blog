@@ -2,63 +2,62 @@
  * Created by chanaka on 10/2/15.
  */
 
-angular.module('authService', [])
+module.factory('Auth', function ($http, $q, AuthToken) {
 
-    .factory('Auth', function ($http, $q, AuthToken) {
+    var authFactory = {};
 
-        var authFactory = {};
-
-        /**
-         * Create login function.
-         * @param username
-         * @param password
-         * @returns {*}
-         */
-        authFactory.login = function (username, password) {
-            return $http.post('/api/login', {
-                username: username,
-                password: password
+    /**
+     * Create login function.
+     * @param username
+     * @param password
+     * @returns {*}
+     */
+    authFactory.login = function (username, password) {
+        console.log("Login service");
+        return $http.post(host.login, {
+            username: username,
+            password: password
+        })
+            .success(function (data) {
+                AuthToken.setToken(data.token);
+                return data;
             })
-                .success(function (data) {
-                    AuthToken.setToken(data.token);
-                    return data;
-                })
-        };
+    };
 
-        /**
-         * Create logout function and clear all login data.
-         */
-        authFactory.logout = function () {
-            AuthToken.setToken();
-        };
+    /**
+     * Create logout function and clear all login data.
+     */
+    authFactory.logout = function () {
+        AuthToken.setToken();
+    };
 
-        /**
-         * Check the login status of the user and get confirmation.
-         * @returns {boolean}
-         */
-        authFactory.isLoggedIn = function () {
-            if (AuthToken.getToken()) {
-                return true;
-            } else {
-                return false;
-            }
-        };
+    /**
+     * Check the login status of the user and get confirmation.
+     * @returns {boolean}
+     */
+    authFactory.isLoggedIn = function () {
+        if (AuthToken.getToken()) {
+            return true;
+        } else {
+            return false;
+        }
+    };
 
-        /**
-         * Get user details after user logged in.
-         * @returns {*}
-         */
-        authFactory.getUser = function () {
-            if (AuthToken.getToken()) {
-                return $http.get('/api/me');
-            } else {
-                return $q.reject({message: "Userhas no token"});
-            }
-        };
+    /**
+     * Get user details after user logged in.
+     * @returns {*}
+     */
+    authFactory.getUser = function () {
+        if (AuthToken.getToken()) {
+            return $http.get('/api/me');
+        } else {
+            return $q.reject({message: "Userhas no token"});
+        }
+    };
 
-        return authFactory;
+    return authFactory;
 
-    })
+})
 
 
     .factory('AuthToken', function ($window) {
@@ -83,9 +82,7 @@ angular.module('authService', [])
                 $window.localStorage.removeItem('token');
             }
         };
-
         return authTokenFactory;
-
     })
 
     .factory('AuthInterceptor', function ($q, $location, AuthToken) {

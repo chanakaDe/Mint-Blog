@@ -38,7 +38,3 @@ var headers = {
     'Content-Type': 'application/json',
     'Accept': 'application/json'
 };
-
-var nodeHeaders = {
-    'x-access-token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1NjExNTkyNGFkZjYxNDA2MzM0ZGM4Y2IiLCJuYW1lIjoiYyIsInVzZXJuYW1lIjoiYyIsImlhdCI6MTQ0Mzk3NzUxN30.Wl4xTTyW3-HAeSxZympYjdNgR8OrKxelUTNRetyJ32g'
-};

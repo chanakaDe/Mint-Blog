@@ -3,9 +3,9 @@
  */
 function DashController($scope, postService) {
 
-    postService.getAllBookings().then(function (data) {
-        console.log(data);
-    });
+    //postService.getAllBookings().then(function (data) {
+    //    console.log(data);
+    //});
 
     $(document).ready(function () {
 

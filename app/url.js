@@ -7,5 +7,6 @@ var mainHost = "http://localhost:3000/api";
 var debug = true;
 
 var host = {
-    post: mainHost + '/post'
+    post: mainHost + '/post',
+    login: mainHost + '/login'
 };

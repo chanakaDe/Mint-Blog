@@ -3,7 +3,7 @@
  */
 function MainController($rootScope, $location, Auth, $scope) {
 
-    $scope.loggedIn = Auth.isLogged();
+    $scope.loggedIn = Auth.isLoggedIn();
 
     $rootScope.$on('$routeChangeStart', function () {
         $scope.loggedIn = Auth.isLoggedIn();
@@ -13,6 +13,7 @@ function MainController($rootScope, $location, Auth, $scope) {
     });
 
     $scope.doLogin = function () {
+        console.log("Login controller");
         $scope.processing = true;
         $scope.error = '';
 
