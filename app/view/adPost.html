@@ -4,12 +4,12 @@
 
             <h3>Make new post</h3>
 
-            <input type="text" placeholder="Enter Post Title Here" class="form-control" ng-model="story.postTitle">
+            <input type="text" placeholder="Enter Post Title Here" class="form-control" ng-model="story.title">
             <br>
 
             <div text-angular
                  ng-required="true"
-                 ng-model="story.postContent"
+                 ng-model="story.content"
                  ta-toolbar="[
       ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'pre', 'quote'],
       ['bold', 'italics', 'underline', 'strikeThrough', 'ul', 'ol', 'redo', 'undo', 'clear'],
@@ -18,7 +18,7 @@
             <br>
             <button class="btn btn-primary" ng-click="previewContent()">Preview</button>
             <button class="btn btn-default">Save as draft</button>
-            <button class="btn btn-success">Save and publish</button>
+            <button class="btn btn-success" ng-click="makeNewStory()">Save and publish</button>
 
         </div>
 

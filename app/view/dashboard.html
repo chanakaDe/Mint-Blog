@@ -66,112 +66,19 @@
 
                 <div class="pricing-wrapper col-md-12">
                     <!-- Pricing Plan -->
-                    <div class="pricing-plan">
+                    <div class="pricing-plan" ng-repeat="story in stories">
                         <!--Pricing Plan Ribbon -->
                         <div class="ribbon-wrapper">
                             <div class="price-ribbon ribbon-green">Popular</div>
                         </div>
-                        <h1 class="pricing-plan-title" style="text-align: left">Interface elements for Document
-                            Management</h1>
+                        <h1 class="pricing-plan-title" style="text-align: left">{{story.title}}</h1>
 
 
-                        <p>
-                            In a collaboration platform we need features to manage these elements.
+                        <p ng-bind-html="story.content">
 
-                            One way to manage them is to organize and structure them.
-
-                            People are organized in groups. Groups are structured into hierarchies. Documents are
-                            structured
-                            into topics, areas or containers. Communication is structured into topics, threads.
-
-                            In this article we'll focus on documents and how to structure them.
-
-                            The primary concept to structure documents in sTeam is a Room. Rooms can be nested, and they
-                            can
-                            have Doors or Gates to connect them. Doors can be one-way or bidirectional.
                         </p>
 
                         <a href="#/post" class="btn">Read more</a>
-                    </div>
-
-                    <div class="pricing-plan">
-                        <!--Pricing Plan Ribbon -->
-                        <div class="ribbon-wrapper">
-                            <div class="price-ribbon ribbon-green">Popular</div>
-                        </div>
-                        <h1 class="pricing-plan-title" style="text-align: left">How to install sTeam quick notes</h1>
-
-                        <p>
-                            In a collaboration platform we need features to manage these elements.
-
-                            One way to manage them is to organize and structure them.
-
-                            People are organized in groups. Groups are structured into hierarchies. Documents are
-                            structured
-                            into topics, areas or containers. Communication is structured into topics, threads.
-
-                            In this article we'll focus on documents and how to structure them.
-
-                            The primary concept to structure documents in sTeam is a Room. Rooms can be nested, and they
-                            can
-                            have Doors or Gates to connect them. Doors can be one-way or bidirectional.
-                        </p>
-
-                        <button href="index.html" class="btn">Read more</button>
-                    </div>
-
-                    <div class="pricing-plan">
-                        <!--Pricing Plan Ribbon -->
-                        <div class="ribbon-wrapper">
-                            <div class="price-ribbon ribbon-green">Popular</div>
-                        </div>
-                        <h1 class="pricing-plan-title" style="text-align: left">About email task management</h1>
-
-
-                        <p>
-                            In a collaboration platform we need features to manage these elements.
-
-                            One way to manage them is to organize and structure them.
-
-                            People are organized in groups. Groups are structured into hierarchies. Documents are
-                            structured
-                            into topics, areas or containers. Communication is structured into topics, threads.
-
-                            In this article we'll focus on documents and how to structure them.
-
-                            The primary concept to structure documents in sTeam is a Room. Rooms can be nested, and they
-                            can
-                            have Doors or Gates to connect them. Doors can be one-way or bidirectional.
-                        </p>
-
-                        <button href="index.html" class="btn">Read more</button>
-                    </div>
-
-                    <div class="pricing-plan">
-                        <!--Pricing Plan Ribbon -->
-                        <div class="ribbon-wrapper">
-                            <div class="price-ribbon ribbon-green">Popular</div>
-                        </div>
-                        <h1 class="pricing-plan-title" style="text-align: left">Coding for fun in xiamen</h1>
-
-
-                        <p>
-                            In a collaboration platform we need features to manage these elements.
-
-                            One way to manage them is to organize and structure them.
-
-                            People are organized in groups. Groups are structured into hierarchies. Documents are
-                            structured
-                            into topics, areas or containers. Communication is structured into topics, threads.
-
-                            In this article we'll focus on documents and how to structure them.
-
-                            The primary concept to structure documents in sTeam is a Room. Rooms can be nested, and they
-                            can
-                            have Doors or Gates to connect them. Doors can be one-way or bidirectional.
-                        </p>
-
-                        <button href="index.html" class="btn">Read more</button>
                     </div>
 
                 </div>
