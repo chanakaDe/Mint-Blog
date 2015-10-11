@@ -1,12 +1,14 @@
 /**
  * Created by chanaka on 9/3/15.
  */
-function DashController($scope, postService) {
+function DashController($scope, storyService) {
 
-    //postService.getAllBookings().then(function (data) {
-    //    console.log(data);
-    //});
+    $scope.message = '';
+    $scope.stories = [];
 
+    /**
+     * Setting the image slider on dash screen.
+     */
     $(document).ready(function () {
 
         //Homepage Slider
@@ -21,5 +23,13 @@ function DashController($scope, postService) {
         };
         var mySequence = $("#sequence").sequence(options).data("sequence");
         //Main menu Initialization
+    });
+
+    /**
+     * Get all saved stories from the server.
+     */
+    storyService.getStories().success(function (data) {
+        $scope.stories = data;
+        console.log(data);
     });
 }

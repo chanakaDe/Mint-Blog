@@ -10,5 +10,8 @@ var host = {
     post: mainHost + '/post',
     login: mainHost + '/login',
     signup: mainHost + '/signup',
-    users : mainHost + '/users'
+    users: mainHost + '/users',
+    story: mainHost + '/story',
+    stories: mainHost + '/stories',
+    me: mainHost + '/me'
 };

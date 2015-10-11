@@ -33,6 +33,10 @@ module.config(function ($routeProvider) {
         });
 });
 
+module.config(function ($httpProvider) {
+    $httpProvider.interceptors.push('AuthInterceptor');
+});
+
 
 var headers = {
     'Content-Type': 'application/json',

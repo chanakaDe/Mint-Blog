@@ -1,7 +1,7 @@
 /**
  * Created by chanaka on 10/8/15.
  */
-function MainController($rootScope, $location, Auth, $scope) {
+function MainController($rootScope, $location, Auth, $scope, $route) {
 
     $scope.loggedIn = Auth.isLoggedIn();
 
@@ -32,7 +32,8 @@ function MainController($rootScope, $location, Auth, $scope) {
 
     $scope.doLogout = function () {
         Auth.logout();
-        $location.path('/logout');
+        //$location.path('/logout');
+        $route.reload();
     }
 
 }

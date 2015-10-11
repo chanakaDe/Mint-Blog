@@ -4,12 +4,12 @@
 
             <h3>Make new post</h3>
 
-            <input type="text" placeholder="Enter Post Title Here" class="form-control" ng-model="postTitle">
+            <input type="text" placeholder="Enter Post Title Here" class="form-control" ng-model="story.postTitle">
             <br>
 
             <div text-angular
                  ng-required="true"
-                 ng-model="postContent"
+                 ng-model="story.postContent"
                  ta-toolbar="[
       ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'pre', 'quote'],
       ['bold', 'italics', 'underline', 'strikeThrough', 'ul', 'ol', 'redo', 'undo', 'clear'],

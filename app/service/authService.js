@@ -49,9 +49,9 @@ module.factory('Auth', function ($http, $q, AuthToken) {
      */
     authFactory.getUser = function () {
         if (AuthToken.getToken()) {
-            return $http.get('/api/me');
+            return $http.get(host.me);
         } else {
-            return $q.reject({message: "Userhas no token"});
+            return $q.reject({message: "User has no token"});
         }
     };
 
