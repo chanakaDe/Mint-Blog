@@ -1,7 +1,7 @@
 /**
  * Created by chanaka on 9/3/15.
  */
-function DashController($scope, storyService) {
+function DashController($scope, storyService, $location) {
 
     $scope.message = '';
     $scope.stories = [];
@@ -32,4 +32,13 @@ function DashController($scope, storyService) {
         $scope.stories = data;
         console.log(data);
     });
+
+    /**
+     * Load story data with provided story id.
+     * @param storyId
+     */
+    $scope.loadFullStory = function (storyId) {
+        console.log("Story id : " + storyId);
+        $location.path('/post/' + storyId);
+    }
 }

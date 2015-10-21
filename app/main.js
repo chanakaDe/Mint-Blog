@@ -13,7 +13,7 @@ module.config(function ($routeProvider) {
         .when('/', {
             templateUrl: 'app/view/dashboard.html',
             controller: ''
-        }).when('/post', {
+        }).when('/post/:storyId', {
             templateUrl: 'app/view/post.html',
             controller: ''
         }).when('/publish', {
@@ -27,6 +27,9 @@ module.config(function ($routeProvider) {
             controller: ''
         }).when('/resetPwd', {
             templateUrl: 'app/view/pwdReset.html',
+            controller: ''
+        }).when('/my_account', {
+            templateUrl: 'app/view/account.html',
             controller: ''
         }).otherwise({
             redirectTo: '/'
@@ -42,3 +45,27 @@ var headers = {
     'Content-Type': 'application/json',
     'Accept': 'application/json'
 };
+
+/**
+ * Creating angular text limit filter.
+ */
+angular.module('sTeam')
+    .filter('textLimit', function () {
+        return function (input, char) {
+            try {
+                if (isNaN(input) && input.length > char) {
+                    var char = char - 1 || 0;
+                    var out = [];
+                    for (var i = 0; i < (char + 3); i++) {
+                        out.push(input[i]);
+                    }
+                    return out.join('') + ".....";
+                } else {
+                    return input;
+                }
+            } catch (e) {
+
+            }
+
+        }
+    });

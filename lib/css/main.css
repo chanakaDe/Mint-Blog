@@ -2970,7 +2970,7 @@ span.color-red {
 +	Buttons Style
 --------------------------------------------------------------------------*/
 .btn {
-    border: 1px solid #4f8db3;
+    /*border: 1px solid #4f8db3;*/
     -webkit-border-radius: 2px;
     -webkit-background-clip: padding-box;
     -moz-border-radius: 2px;
@@ -2987,7 +2987,7 @@ span.color-red {
     -ms-transition: all .25s ease;
     transition: all .25s ease;
     text-align: center;
-    background: none repeat scroll 0 0 #4f8db3;
+    /*background: none repeat scroll 0 0 #4f8db3;*/
     text-shadow: none;
     box-shadow: none;
     color: #FFF;

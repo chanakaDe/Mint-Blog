@@ -71,14 +71,15 @@
                         <div class="ribbon-wrapper">
                             <div class="price-ribbon ribbon-green">Popular</div>
                         </div>
-                        <h1 class="pricing-plan-title" style="text-align: left">{{story.title}}</h1>
+                        <h1 class="pricing-plan-title" style="text-align: left">{{story.title}}
+                            <span>{{story.created | date:'medium'}}</span>
+                        </h1>
 
-
-                        <p ng-bind-html="story.content">
+                        <p ng-bind-html="story.content | textLimit:500">
 
                         </p>
 
-                        <a href="#/post" class="btn">Read more</a>
+                        <a ng-click="loadFullStory(story._id)" class="btn">Read more</a>
                     </div>
 
                 </div>

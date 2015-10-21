@@ -1,0 +1,52 @@
+<div class="section" ng-controller="AccountController">
+    <div class="container">
+        <div class="row blog-post">
+            <br>
+
+            <div class="col-sm-12">
+                <h3>My Account</h3>
+                <table class="table table-bordered">
+                    <tr>
+                        <th width="300px">Title</th>
+                        <th>Content</th>
+                        <th width="200px">Options</th>
+                    </tr>
+                    <tr ng-repeat="story in stories">
+                        <td>{{story.title}}</td>
+                        <td>
+                            <p ng-bind-html="story.content | textLimit:100"></p>
+                        </td>
+                        <td>
+                            <button ng-click="loadFullStory(story._id)" class="btn btn-success btn-xs">View</button>
+                            <button class="btn btn-primary btn-xs">Update</button>
+                            <button data-backdrop="false" ng-click="openDeleteModal()" class="btn btn-danger btn-xs">
+                                Delete
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="deleteConfirmationModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
