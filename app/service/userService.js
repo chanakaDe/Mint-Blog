@@ -11,6 +11,9 @@ module.factory('userService', function ($http) {
     userService.all = function () {
         return $http.get(host.users)
     };
+    userService.myInfo = function () {
+        return $http.get(host.me)
+    };
 
     return userService;
 

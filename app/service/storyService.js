@@ -31,6 +31,14 @@ module.factory('storyService', function ($http) {
         return $http.get(host.story + '?id=' + storyId)
     };
 
+    /**
+     * Load all the stories registered with user.
+     * @returns {*}
+     */
+    storyService.getUserStoryWithId = function () {
+        return $http.get(host.story)
+    };
+
     return storyService;
 
 });
