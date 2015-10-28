@@ -1,7 +1,7 @@
 /**
  * Created by chanaka on 10/21/15.
  */
-function AccountController($scope, storyService, $location, userService) {
+function AccountController($scope, storyService, $location) {
 
     ///**
     // * Loan my details.
@@ -14,10 +14,7 @@ function AccountController($scope, storyService, $location, userService) {
     /**
      * Get all saved stories from the server.
      */
-    storyService.getUserStoryWithId().success(function (data) {
-        $scope.stories = data;
-        console.log(data);
-    });
+    loadUserStory();
 
     /**
      * Load story data with provided story id.
@@ -28,8 +25,34 @@ function AccountController($scope, storyService, $location, userService) {
         $location.path('/post/' + storyId);
     };
 
-    $scope.openDeleteModal = function () {
-        $('#deleteConfirmationModal').modal('show');
+    /**
+     * Remove story from server.
+     * @param storyId
+     */
+    $scope.viewConfirmation = function (storyId) {
+        $.prompt("Are you sure you want to remove selected story ? ", {
+            title: "Remove confirmation",
+            buttons: {"Yes, remove": true, "No, Don't remove": false},
+            submit: function (e, v, m, f) {
+                console.log("Value clicked was: " + v);
+                if (v == true) {
+                    storyService.removeStoryService(storyId).success(function (data) {
+                        console.log(data);
+                        loadUserStory();
+                    });
+                }
+            }
+        });
+    };
+
+    /**
+     * Creating a reusable function for getting user stories.
+     */
+    function loadUserStory() {
+        storyService.getUserStoryWithId().success(function (data) {
+            $scope.stories = data;
+            console.log(data);
+        });
     }
 
 }

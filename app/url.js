@@ -13,5 +13,7 @@ var host = {
     users: mainHost + '/users',
     story: mainHost + '/story',
     stories: mainHost + '/stories',
-    me: mainHost + '/me'
+    me: mainHost + '/me',
+    story_of_user : mainHost + '/story_of_user',
+    remove_story : mainHost + '/remove_story'
 };

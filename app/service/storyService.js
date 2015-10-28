@@ -36,7 +36,11 @@ module.factory('storyService', function ($http) {
      * @returns {*}
      */
     storyService.getUserStoryWithId = function () {
-        return $http.get(host.story)
+        return $http.get(host.story_of_user)
+    };
+
+    storyService.removeStoryService = function (storyId) {
+        return $http.get(host.remove_story + '?id=' + storyId)
     };
 
     return storyService;
