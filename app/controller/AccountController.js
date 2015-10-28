@@ -25,6 +25,11 @@ function AccountController($scope, storyService, $location) {
         $location.path('/post/' + storyId);
     };
 
+    $scope.sendStoryForUpdate = function (storyId) {
+        console.log("Story id : " + storyId);
+        $location.path('/update_post/' + storyId);
+    };
+
     /**
      * Remove story from server.
      * @param storyId

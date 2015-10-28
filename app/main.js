@@ -31,6 +31,9 @@ module.config(function ($routeProvider) {
         }).when('/my_account', {
             templateUrl: 'app/view/account.html',
             controller: ''
+        }).when('/update_post/:storyId', {
+            templateUrl: 'app/view/updatePost.html',
+            controller: ''
         }).otherwise({
             redirectTo: '/'
         });
