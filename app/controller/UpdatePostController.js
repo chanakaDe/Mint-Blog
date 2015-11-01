@@ -57,6 +57,12 @@ function UpdatePostController($scope, $routeParams, storyService, $location) {
             $scope.story = {};
             $location.path('/my_account');
         });
-    }
+    };
+
+    $scope.previewContent = function () {
+        $scope.title = $scope.story.title;
+        $scope.content = $scope.story.content;
+        $scope.showPreview = true;
+    };
 
 }
