@@ -7,26 +7,20 @@
 
                 <form>
                     <div class="input-group">
-                        <input class="form-control input-md" id="appendedInputButtons" type="text">
+                        <input class="form-control input-md" placeholder="Enter search keyword" ng-model="story.query"
+                               type="text">
 								<span class="input-group-btn">
-									<button class="btn btn-md" type="button">Search</button>
+									<button class="btn btn-md" type="button" ng-click="getSearchQuery()">Search</button>
 								</span>
                     </div>
                 </form>
                 <h4>Categories</h4>
                 <ul class="blog-categories">
-                    <li><a href="#">Lorem ipsum</a></li>
-                    <li><a href="#">Sed sit amet metus</a></li>
-                    <li><a href="#">Nunc et diam </a></li>
-                    <li><a href="#">Quisque</a></li>
-                </ul>
-                <h4>Archive</h4>
-                <ul>
-                    <li><a href="#">January 2013</a></li>
-                    <li><a href="#">February 2013</a></li>
-                    <li><a href="#">March 2013</a></li>
-                    <li><a href="#">April 2013</a></li>
-                    <li><a href="#">May 2013</a></li>
+                    <li><a href="#">Java</a></li>
+                    <li><a href="#">Javascript</a></li>
+                    <li><a href="#">Python </a></li>
+                    <li><a href="#">Node.js</a></li>
+                    <li><a href="#">Pike</a></li>
                 </ul>
             </div>
             <!-- End Sidebar -->

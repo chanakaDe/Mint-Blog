@@ -57,6 +57,15 @@ module.factory('storyService', function ($http) {
         return $http.post(host.update_story, story)
     };
 
+    /**
+     * Search all stories in server with provided query.
+     * @param query
+     * @returns {*}
+     */
+    storyService.searchAllStoriesWithQuery = function (query) {
+        return $http.get(host.search_story + '?query=' + query)
+    };
+
     return storyService;
 
 });

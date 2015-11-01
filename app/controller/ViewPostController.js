@@ -28,7 +28,7 @@ function ViewPostController($scope, $routeParams, storyService, $location) {
     $scope.getSearchQuery = function () {
         var query = $scope.story.query;
         console.log(query);
-        $location.path('/search?query=' + query);
+        $location.path('/search/' + query);
     }
 
 }

@@ -72,7 +72,6 @@
                             <div class="price-ribbon ribbon-green">{{story.category}}</div>
                         </div>
                         <h1 class="pricing-plan-title" style="text-align: left">{{story.title}}
-                            <span>{{story.created | date:'medium'}}</span>
                         </h1>
 
                         <p ng-bind-html="story.content | textLimit:500">
@@ -81,7 +80,6 @@
 
                         <a ng-click="loadFullStory(story._id)" class="btn btn-primary">Read more</a>
                     </div>
-
                 </div>
                 <!-- End Pricing Plans Wrapper -->
             </div>
