@@ -1,7 +1,7 @@
 /**
  * Created by chanaka on 10/11/15.
  */
-function ViewPostController($scope, $routeParams, storyService) {
+function ViewPostController($scope, $routeParams, storyService, $location) {
 
     /**
      * Scroll the html view to the top.
@@ -21,5 +21,14 @@ function ViewPostController($scope, $routeParams, storyService) {
         $scope.storyData = data[0];
         console.log(data);
     });
+
+    /**
+     * Get search query and redirect to search results view.
+     */
+    $scope.getSearchQuery = function () {
+        var query = $scope.story.query;
+        console.log(query);
+        $location.path('/search?query=' + query);
+    }
 
 }
