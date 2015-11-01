@@ -1,0 +1,30 @@
+<div ng-controller="SearchController">
+    <div class="section">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="pricing-wrapper col-md-12">
+                    <!-- Pricing Plan -->
+                    <div class="pricing-plan" ng-repeat="story in stories">
+                        <!--Pricing Plan Ribbon -->
+                        <div class="ribbon-wrapper">
+                            <div class="price-ribbon ribbon-green">{{story.category}}</div>
+                        </div>
+                        <h1 class="pricing-plan-title" style="text-align: left">{{story.title}}
+                            <span>{{story.created | date:'medium'}}</span>
+                        </h1>
+
+                        <p ng-bind-html="story.content | textLimit:500">
+
+                        </p>
+
+                        <a ng-click="loadFullStory(story._id)" class="btn btn-primary">Read more</a>
+                    </div>
+
+                </div>
+                <!-- End Pricing Plans Wrapper -->
+            </div>
+        </div>
+    </div>
+</div>

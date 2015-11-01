@@ -12,7 +12,9 @@
                         <th width="200px">Options</th>
                     </tr>
                     <tr ng-repeat="story in stories">
-                        <td>{{story.title}}</td>
+                        <td>{{story.title}}
+                            <span ng-if="story.publishStatus == 0" class="label label-warning">Draft</span>
+                        </td>
                         <td>
                             <p ng-bind-html="story.content | textLimit:100"></p>
                         </td>

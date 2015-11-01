@@ -34,6 +34,9 @@ module.config(function ($routeProvider) {
         }).when('/update_post/:storyId', {
             templateUrl: 'app/view/updatePost.html',
             controller: ''
+        }).when('/search', {
+            templateUrl: 'app/view/search.html',
+            controller: ''
         }).otherwise({
             redirectTo: '/'
         });

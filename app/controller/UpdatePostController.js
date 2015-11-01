@@ -23,6 +23,7 @@ function UpdatePostController($scope, $routeParams, storyService, $location) {
         console.log(data);
         $scope.story.title = $scope.storyData.title;
         $scope.story.content = $scope.storyData.content;
+        $scope.story.category = $scope.storyData.category;
     });
 
     /**
@@ -32,6 +33,7 @@ function UpdatePostController($scope, $routeParams, storyService, $location) {
 
         var story = $scope.story;
         story.storyId = storyId;
+        story.publishStatus = 1;
         console.log(story);
 
         storyService.updateExistingStory(story).success(function (data) {
@@ -39,6 +41,21 @@ function UpdatePostController($scope, $routeParams, storyService, $location) {
             $.notify("STORY UPDATED SUCCESSFULLY", "success");
             $scope.story = {};
             $location.path('/');
+        });
+    };
+
+    $scope.updateDraft = function () {
+
+        var story = $scope.story;
+        story.storyId = storyId;
+        story.publishStatus = 0;
+        console.log(story);
+
+        storyService.updateExistingStory(story).success(function (data) {
+            console.log(data);
+            $.notify("DRAFT UPDATED SUCCESSFULLY", "success");
+            $scope.story = {};
+            $location.path('/my_account');
         });
     }
 

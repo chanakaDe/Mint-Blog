@@ -4,7 +4,21 @@
 
             <h3>Update existing post</h3>
 
-            <input type="text" placeholder="Enter Post Title Here" class="form-control" ng-model="story.title">
+            <div class="row">
+                <div class="col-lg-6">
+                    <input type="text" placeholder="Enter Post Title Here" class="form-control" ng-model="story.title">
+                </div>
+                <div class="col-lg-6">
+                    <select class="form-control" ng-model="story.category">
+                        <option value="">Select Category</option>
+                        <option value="js">Javascript</option>
+                        <option value="java">Java</option>
+                        <option value="python">Python</option>
+                        <option value="node.js">Node.js</option>
+                        <option value="pike">Pike</option>
+                    </select>
+                </div>
+            </div>
             <br>
 
             <div text-angular
@@ -17,6 +31,7 @@
       ['html', 'insertImage','insertLink', 'insertVideo']]"></div>
             <br>
             <button class="btn btn-primary" ng-click="previewContent()">Preview</button>
+            <button class="btn btn-default" ng-click="updateDraft()">Update and draft</button>
             <button class="btn btn-success" ng-click="updateStory()">Update and publish</button>
 
         </div>
