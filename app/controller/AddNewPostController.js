@@ -15,6 +15,22 @@ function AddNewPostController($scope, storyService) {
     $scope.makeNewStory = function () {
 
         var story = $scope.story;
+        story.publishStatus = 1;
+        console.log(story);
+
+        storyService.createStory(story).success(function (data) {
+            console.log(data);
+            $.notify("NEW STORY ADDED SUCCESSFULLY", "success");
+            $scope.story = {};
+            $scope.message = data.message;
+            //$scope.stories.push(data);
+        });
+    };
+
+    $scope.draftNewStory = function () {
+
+        var story = $scope.story;
+        story.publishStatus = 0;
         console.log(story);
 
         storyService.createStory(story).success(function (data) {

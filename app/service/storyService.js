@@ -39,8 +39,22 @@ module.factory('storyService', function ($http) {
         return $http.get(host.story_of_user)
     };
 
+    /**
+     * Remove existing story with story id.
+     * @param storyId
+     * @returns {*}
+     */
     storyService.removeStoryService = function (storyId) {
         return $http.get(host.remove_story + '?id=' + storyId)
+    };
+
+    /**
+     * Update existing story in database.
+     * @param story
+     * @returns {*}
+     */
+    storyService.updateExistingStory = function (story) {
+        return $http.post(host.update_story, story)
     };
 
     return storyService;

@@ -1,7 +1,7 @@
 /**
  * Created by chanaka on 10/28/15.
  */
-function UpdatePostController($scope, $routeParams, storyService) {
+function UpdatePostController($scope, $routeParams, storyService, $location) {
 
     /**
      * Initializing story object.
@@ -24,5 +24,22 @@ function UpdatePostController($scope, $routeParams, storyService) {
         $scope.story.title = $scope.storyData.title;
         $scope.story.content = $scope.storyData.content;
     });
+
+    /**
+     * Update Existing story in the database.
+     */
+    $scope.updateStory = function () {
+
+        var story = $scope.story;
+        story.storyId = storyId;
+        console.log(story);
+
+        storyService.updateExistingStory(story).success(function (data) {
+            console.log(data);
+            $.notify("STORY UPDATED SUCCESSFULLY", "success");
+            $scope.story = {};
+            $location.path('/');
+        });
+    }
 
 }
