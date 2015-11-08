@@ -7,10 +7,19 @@ function SearchController($scope, storyService, $routeParams, $location) {
     console.log(query);
     $scope.query = query;
 
-    /**
-     * Loading data on page load.
-     */
-    search(query);
+    console.log($routeParams['category']);
+
+    if ($routeParams['category'] == "no_category") {
+        console.log("NULL ACTIVATED");
+        /**
+         * Loading data on page load.
+         */
+        search(query);
+    } else {
+        console.log("ELSE ACTIVATED");
+        searchCategory($routeParams['category']);
+    }
+
 
     /**
      * Inbuilt search with query.
@@ -36,6 +45,23 @@ function SearchController($scope, storyService, $routeParams, $location) {
     };
 
     /**
+     * Search category on click.
+     * @param category
+     */
+    $scope.searchCategoryOnClick = function (category) {
+        storyService.searchAllStoriesWithCategory(category).success(function (data) {
+            $scope.stories = data;
+            console.log(data);
+
+            if (data == '') {
+                $scope.showNullError = true;
+            } else {
+                $scope.showNullError = false;
+            }
+        });
+    };
+
+    /**
      * Load story data with provided story id.
      * @param storyId
      */
@@ -53,6 +79,23 @@ function SearchController($scope, storyService, $routeParams, $location) {
          * Load all stories with the provided query.
          */
         storyService.searchAllStoriesWithQuery(query).success(function (data) {
+            $scope.stories = data;
+            console.log(data);
+
+            if (data == '') {
+                $scope.showNullError = true;
+            } else {
+                $scope.showNullError = false;
+            }
+        });
+    }
+
+    /**
+     * Searching all the stories with the given category.
+     * @param category
+     */
+    function searchCategory(category) {
+        storyService.searchAllStoriesWithCategory(category).success(function (data) {
             $scope.stories = data;
             console.log(data);
 

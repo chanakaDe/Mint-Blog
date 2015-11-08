@@ -34,7 +34,7 @@ module.config(function ($routeProvider) {
         }).when('/update_post/:storyId', {
             templateUrl: 'app/view/updatePost.html',
             controller: ''
-        }).when('/search/:query', {
+        }).when('/search/:query/:category', {
             templateUrl: 'app/view/search.html',
             controller: ''
         }).otherwise({
@@ -72,6 +72,13 @@ angular.module('sTeam')
             } catch (e) {
 
             }
-
         }
+    })
+
+    .filter('reverse', function () {
+
+        return function (items) {
+            return items.slice().reverse();
+        }
+
     });

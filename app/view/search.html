@@ -13,17 +13,18 @@
                                    placeholder="Enter search keyword" ng-model="story.query"
                                    type="text">
 								<span class="input-group-btn">
-									<button class="btn btn-md" type="button" ng-click="searchMoreWithButton()">Search</button>
+									<button class="btn btn-md" type="button" ng-click="searchMoreWithButton()">Search
+                                    </button>
 								</span>
                         </div>
                     </form>
                     <h4>Categories</h4>
                     <ul class="blog-categories">
-                        <li><a href="#">Java</a></li>
-                        <li><a href="#">Javascript</a></li>
-                        <li><a href="#">Python </a></li>
-                        <li><a href="#">Node.js</a></li>
-                        <li><a href="#">Pike</a></li>
+                        <li><a ng-click="searchCategoryOnClick('java')">Java</a></li>
+                        <li><a ng-click="searchCategoryOnClick('javascript')">Javascript</a></li>
+                        <li><a ng-click="searchCategoryOnClick('python')">Python </a></li>
+                        <li><a ng-click="searchCategoryOnClick('node.js')">Node.js</a></li>
+                        <li><a ng-click="searchCategoryOnClick('pike')">Pike</a></li>
                     </ul>
                 </div>
 

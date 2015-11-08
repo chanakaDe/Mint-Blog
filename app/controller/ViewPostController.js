@@ -28,7 +28,15 @@ function ViewPostController($scope, $routeParams, storyService, $location) {
     $scope.getSearchQuery = function () {
         var query = $scope.story.query;
         console.log(query);
-        $location.path('/search/' + query);
-    }
+        $location.path('/search/' + query + '/' + "no_category");
+    };
+
+    /**
+     * Load all the data according to the category.
+     * @param category
+     */
+    $scope.getSearchCategory = function (category) {
+        $location.path('/search/' + "no_query" + '/' + category);
+    };
 
 }

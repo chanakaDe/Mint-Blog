@@ -66,6 +66,15 @@ module.factory('storyService', function ($http) {
         return $http.get(host.search_story + '?query=' + query)
     };
 
+    /**
+     * Search all stories with provided story category.
+     * @param category
+     * @returns {*}
+     */
+    storyService.searchAllStoriesWithCategory = function (category) {
+        return $http.get(host.search_story_by_category + '?category=' + category)
+    };
+
     return storyService;
 
 });

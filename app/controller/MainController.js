@@ -34,6 +34,10 @@ function MainController($rootScope, $location, Auth, $scope, $route) {
         Auth.logout();
         //$location.path('/logout');
         $route.reload();
-    }
+    };
+
+    $scope.getSearchCategory = function (category) {
+        $location.path('/search/' + "no_query" + '/' + category);
+    };
 
 }

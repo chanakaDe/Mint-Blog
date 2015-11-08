@@ -17,5 +17,6 @@ var host = {
     story_of_user: mainHost + '/story_of_user',
     remove_story: mainHost + '/remove_story',
     update_story: mainHost + '/update_story',
-    search_story: mainHost + '/search_story'
+    search_story: mainHost + '/search_story',
+    search_story_by_category: mainHost + '/search_story_by_category'
 };
