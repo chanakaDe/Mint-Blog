@@ -10,7 +10,8 @@
     <link href="lib/css/jquery-impromptu.min.css" rel="stylesheet">
 
     <link href="lib/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/css/bootstrap.css">
+    <link rel="stylesheet" href="lib/css/bootstrap-dialog.min.css">
     <link rel="stylesheet" href="lib/textangular/textAngular.css">
     <link rel="stylesheet" href="lib/css/icomoon-social.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800' rel='stylesheet' type='text/css'>
@@ -20,6 +21,15 @@
     <link rel="stylesheet" href="lib/css/main.css">
     <link rel="stylesheet" href="lib/css/font-awesome.min.css">
     <script src="lib/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <style>
+        .handClass {
+            cursor: pointer;
+        }
+
+        a {
+            cursor: pointer
+        }
+    </style>
 </head>
 <body ng-controller="MainController">
 
@@ -36,20 +46,20 @@
                     <a href="#/">Home</a>
                 </li>
                 <li>
-                    <a ng-click="getSearchCategory('java')">Java</a>
+                    <a class="handClass" ng-click="getSearchCategory('java')">Java</a>
                 </li>
 
                 <li>
-                    <a ng-click="getSearchCategory('javascript')">Javascript</a>
+                    <a class="handClass" ng-click="getSearchCategory('javascript')">Javascript</a>
                 </li>
                 <li>
-                    <a ng-click="getSearchCategory('python')">Python</a>
+                    <a class="handClass" ng-click="getSearchCategory('python')">Python</a>
                 </li>
                 <li>
-                    <a ng-click="getSearchCategory('node.js')">Node.js</a>
+                    <a class="handClass" ng-click="getSearchCategory('node.js')">Node.js</a>
                 </li>
                 <li>
-                    <a ng-click="getSearchCategory('pike')">Pike</a>
+                    <a class="handClass" ng-click="getSearchCategory('pike')">Pike</a>
                 </li>
                 <li>
                     <a ng-if="!loggedIn" href="#/login">Login</a>
@@ -58,7 +68,7 @@
                     <a ng-if="!loggedIn" href="#/register">Signup</a>
                 </li>
                 <li ng-if="loggedIn" class="dropdown pull-right">
-                    <a class="dropdown-toggle" data-toggle="dropdown">Account<span class="caret"></span></a>
+                    <a class="dropdown-toggle handClass" data-toggle="dropdown">Account<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#/my_account">Account</a></li>
                         <li role="separator" class="divider"></li>
@@ -81,19 +91,18 @@
         <div class="row">
             <div class="col-footer col-md-3 col-xs-6">
                 <h3>About us</h3>
-                <a>We are a nice team and we do everything together. We are a nice team and we do everything together.
-                    We are a nice team and we do everything together. We are a nice team and we do everything
-                    together. </a>
+                <a>This is an open source blogging platform. Any kind of tech blogger is welcomed here and can post
+                    there
+                    articles and share knowledge and gather all the latest tech feeds.</a>
             </div>
             <div class="col-footer col-md-3 col-xs-6">
                 <h3>Navigate</h3>
                 <ul class="no-list-style footer-navigate-section">
-                    <li><a href="page-blog-posts.html">Blog</a></li>
-                    <li><a href="page-portfolio-3-columns-2.html">Portfolio</a></li>
-                    <li><a href="page-products-3-columns.html">eShop</a></li>
-                    <li><a href="page-services-3-columns.html">Services</a></li>
-                    <li><a href="page-pricing.html">Pricing</a></li>
-                    <li><a href="page-faq.html">FAQ</a></li>
+                    <li><a ng-click="getSearchCategory('java')">Java</a></li>
+                    <li><a ng-click="getSearchCategory('javascript')">Javascript</a></li>
+                    <li><a ng-click="getSearchCategory('python')">Python</a></li>
+                    <li><a ng-click="getSearchCategory('node.js')">Node.js</a></li>
+                    <li><a ng-click="getSearchCategory('pike')">Pike</a></li>
                 </ul>
             </div>
 
@@ -101,9 +110,9 @@
                 <h3>Contacts</h3>
 
                 <p class="contact-us-details">
-                    <b>Address:</b> 123 Fake Street, LN1 2ST, London, United Kingdom<br/>
-                    <b>Phone:</b> +44 123 654321<br/>
-                    <b>Fax:</b> +44 123 654321<br/>
+                    <b>Address:</b> No 5B, New Chance Road , Colombo 10<br/>
+                    <b>Phone:</b> +94 77 21 93303<br/>
+                    <b>Fax:</b> +94 11 5478963<br/>
                     <b>Email:</b> <a
                         href="mailto:chanu1993@gmail.com">chanu1993@gmail.com</a>
                 </p>
@@ -119,7 +128,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="footer-copyright">&copy; 2013 sTeam. All rights reserved.</div>
+                <div class="footer-copyright">&copy; 2015 chanu1993. All rights reserved.</div>
             </div>
         </div>
     </div>
@@ -130,6 +139,7 @@
 <script src="lib/js/angular.min.js"></script>
 <script src="lib/js/angular-route.min.js"></script>
 <script src="lib/js/bootstrap.min.js"></script>
+<script src="lib/js/bootstrap-dialog.min.js"></script>
 <!--<script src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js"></script>-->
 <script src="lib/js/jquery.fitvids.js"></script>
 <script src="lib/js/jquery.sequence-min.js"></script>

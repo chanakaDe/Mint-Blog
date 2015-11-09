@@ -8,7 +8,7 @@
                 <form>
                     <div class="input-group">
                         <input class="form-control input-md" placeholder="Enter search keyword" ng-model="story.query"
-                               type="text">
+                               type="text" ng-keypress="getSearchQueryOnEnter($event)">
 								<span class="input-group-btn">
 									<button class="btn btn-md" type="button" ng-click="getSearchQuery()">Search</button>
 								</span>
@@ -21,6 +21,10 @@
                     <li><a ng-click="getSearchCategory('python')">Python </a></li>
                     <li><a ng-click="getSearchCategory('node.js')">Node.js</a></li>
                     <li><a ng-click="getSearchCategory('pike')">Pike</a></li>
+                    <li><a ng-click="getSearchCategory('c/c++')">C / C++</a></li>
+                    <li><a ng-click="getSearchCategory('go language')">Go language</a></li>
+                    <li><a ng-click="getSearchCategory('visual basic')">Visual Basic</a></li>
+                    <li><a ng-click="getSearchCategory('matlab')">Matlab</a></li>
                 </ul>
             </div>
             <!-- End Sidebar -->

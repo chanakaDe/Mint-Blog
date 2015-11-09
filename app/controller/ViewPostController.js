@@ -32,6 +32,17 @@ function ViewPostController($scope, $routeParams, storyService, $location) {
     };
 
     /**
+     * Get the search query and redirect to search page on Enter Key.
+     */
+    $scope.getSearchQueryOnEnter = function () {
+        if (event.which === 13) {
+            var query = $scope.story.query;
+            console.log(query);
+            $location.path('/search/' + query + '/' + "no_category");
+        }
+    };
+
+    /**
      * Load all the data according to the category.
      * @param category
      */

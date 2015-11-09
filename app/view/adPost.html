@@ -6,23 +6,28 @@
 
             <div class="row">
                 <div class="col-lg-6">
-                    <input type="text" placeholder="Enter Post Title Here" class="form-control" ng-model="story.title">
+                    <input type="text" placeholder="Enter Post Title Here" class="form-control" id="title"
+                           ng-model="story.title">
                 </div>
                 <div class="col-lg-6">
-                    <select class="form-control" ng-model="story.category">
+                    <select class="form-control" id="category" ng-model="story.category">
                         <option value="">Select Category</option>
                         <option value="javascript">Javascript</option>
                         <option value="java">Java</option>
                         <option value="python">Python</option>
                         <option value="node.js">Node.js</option>
                         <option value="pike">Pike</option>
+                        <option value="c/c++">C / C++</option>
+                        <option value="go language">Go language</option>
+                        <option value="visual basic">Visual Basic</option>
+                        <option value="matlab">Matlab</option>
                     </select>
                 </div>
             </div>
 
             <br>
 
-            <div text-angular
+            <div id="content" text-angular
                  ng-required="true"
                  ng-model="story.content"
                  ta-toolbar="[
@@ -32,7 +37,7 @@
       ['html', 'insertImage','insertLink', 'insertVideo']]"></div>
             <br>
             <button class="btn btn-primary" ng-click="previewContent()">Preview</button>
-            <button class="btn btn-default" ng-click="draftNewStory()">Save as draft</button>
+            <button class="btn btn-danger" ng-click="draftNewStory()">Save as draft</button>
             <button class="btn btn-success" ng-click="makeNewStory()">Save and publish</button>
 
         </div>

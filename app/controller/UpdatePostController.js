@@ -8,6 +8,7 @@ function UpdatePostController($scope, $routeParams, storyService, $location) {
      * @type {{title: string, content: string}}
      */
     $scope.story = {
+        category: "",
         title: "",
         content: ""
     };
@@ -31,6 +32,40 @@ function UpdatePostController($scope, $routeParams, storyService, $location) {
      */
     $scope.updateStory = function () {
 
+        $scope.errors = [];
+
+        if ($scope.story.category == '') {
+            document.getElementById("category").style.backgroundColor = "#FFB2B2";
+            $scope.errors.push("Error");
+        } else {
+            document.getElementById("category").style.backgroundColor = "white";
+        }
+        if ($scope.story.title == '') {
+            document.getElementById("title").style.backgroundColor = "#FFB2B2";
+            $scope.errors.push("Error");
+        } else {
+            document.getElementById("title").style.backgroundColor = "white";
+        }
+        if ($scope.story.content == '') {
+            document.getElementById("content").style.backgroundColor = "#FFB2B2";
+            $scope.errors.push("Error");
+        } else {
+            document.getElementById("content").style.backgroundColor = "white";
+        }
+        if ($scope.errors.length > 0) {
+            BootstrapDialog.show({
+                type: BootstrapDialog.TYPE_DANGER,
+                closable: true,
+                closeByBackdrop: false,
+                closeByKeyboard: false,
+                animate: false,
+                title: 'Notification',
+                message: 'Please make sure all the required fields are done before saving a story'
+            });
+
+            return
+        }
+
         var story = $scope.story;
         story.storyId = storyId;
         story.publishStatus = 1;
@@ -45,6 +80,40 @@ function UpdatePostController($scope, $routeParams, storyService, $location) {
     };
 
     $scope.updateDraft = function () {
+
+        $scope.errors = [];
+
+        if ($scope.story.category == '') {
+            document.getElementById("category").style.backgroundColor = "#FFB2B2";
+            $scope.errors.push("Error");
+        } else {
+            document.getElementById("category").style.backgroundColor = "white";
+        }
+        if ($scope.story.title == '') {
+            document.getElementById("title").style.backgroundColor = "#FFB2B2";
+            $scope.errors.push("Error");
+        } else {
+            document.getElementById("title").style.backgroundColor = "white";
+        }
+        if ($scope.story.content == '') {
+            document.getElementById("content").style.backgroundColor = "#FFB2B2";
+            $scope.errors.push("Error");
+        } else {
+            document.getElementById("content").style.backgroundColor = "white";
+        }
+        if ($scope.errors.length > 0) {
+            BootstrapDialog.show({
+                type: BootstrapDialog.TYPE_DANGER,
+                closable: true,
+                closeByBackdrop: false,
+                closeByKeyboard: false,
+                animate: false,
+                title: 'Notification',
+                message: 'Please make sure all the required fields are done before saving a story'
+            });
+
+            return
+        }
 
         var story = $scope.story;
         story.storyId = storyId;

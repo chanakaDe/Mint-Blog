@@ -3,6 +3,16 @@
  */
 function MainController($rootScope, $location, Auth, $scope, $route) {
 
+    /**
+     * Initializing user object.
+     * @type {{username: string, password: string}}
+     */
+    $scope.user = {
+        username: "",
+        password: ""
+    };
+    $scope.errors = [];
+
     $scope.loggedIn = Auth.isLoggedIn();
 
     $rootScope.$on('$routeChangeStart', function () {
@@ -13,6 +23,24 @@ function MainController($rootScope, $location, Auth, $scope, $route) {
     });
 
     $scope.doLogin = function () {
+
+        $scope.errors = [];
+        if ($scope.user.username == '') {
+            document.getElementById("login-username").style.backgroundColor = "#FFB2B2";
+            $scope.errors.push("Error");
+        } else {
+            document.getElementById("login-username").style.backgroundColor = "white";
+        }
+        if ($scope.user.password == '') {
+            document.getElementById("login-password").style.backgroundColor = "#FFB2B2";
+            $scope.errors.push("Error");
+        } else {
+            document.getElementById("login-password").style.backgroundColor = "white";
+        }
+        if ($scope.errors.length > 0) {
+            return
+        }
+
         console.log("Login controller");
         $scope.processing = true;
         $scope.error = '';
