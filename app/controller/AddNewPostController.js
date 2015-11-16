@@ -129,7 +129,7 @@ function AddNewPostController($scope, storyService, $location) {
             //Showing the response message.
             if (data.code == 200) {
                 $.notify("NEW STORY ADDED SUCCESSFULLY AND SAVED AS A DRAFT", "success");
-                $location.path('/');
+                $location.path('/my_account');
             } else {
                 $.notify("SOMETHING WENT WRONG. PLEASE TRY AGAIN", "error");
             }
