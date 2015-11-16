@@ -51,9 +51,13 @@ function MainController($rootScope, $location, Auth, $scope, $route) {
                 $scope.user = data.data;
             });
             if (data.success) {
-                $location.path('/')
+                $.notify("YOU LOGGED IN", "success");
+                $location.path('/');
             } else {
-                $scope.error = data.message;
+                console.log(data);
+                $scope.error = "INVALID LOGIN";
+                document.getElementById("login-password").style.backgroundColor = "#FFB2B2";
+                document.getElementById("login-username").style.backgroundColor = "#FFB2B2";
             }
         });
     };

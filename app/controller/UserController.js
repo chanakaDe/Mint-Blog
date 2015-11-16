@@ -68,8 +68,9 @@ function UserController($scope, userService, $location, $window) {
             $scope.user = {};
             $scope.message = data.data.message;
             $window.localStorage.setItem('token', data.data.token);
+            $.notify("YOU HAVE REGISTERED SUCCESSFULLY", "success");
             $location.path('/');
-        })
+        });
     }
 
 }
