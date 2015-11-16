@@ -3,7 +3,7 @@
  */
 function UserController($scope, userService, $location, $window) {
 
-    $scope.user = {name: "", username: "", password: "", confirmPassword: ""};
+    $scope.user = {name: "", username: "", password: "", confirmPassword: "", email: ""};
 
     $scope.processing = true;
     $scope.errors = [];
@@ -41,6 +41,12 @@ function UserController($scope, userService, $location, $window) {
             $scope.errors.push("Error");
         } else {
             document.getElementById("register-username").style.backgroundColor = "white";
+        }
+        if ($scope.user.email == '') {
+            document.getElementById("register-email").style.backgroundColor = "#FFB2B2";
+            $scope.errors.push("Error");
+        } else {
+            document.getElementById("register-email").style.backgroundColor = "white";
         }
         if ($scope.user.password == '') {
             document.getElementById("password").style.backgroundColor = "#FFB2B2";

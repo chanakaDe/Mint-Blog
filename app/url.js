@@ -18,7 +18,8 @@ var host = {
     remove_story: mainHost + '/remove_story',
     update_story: mainHost + '/update_story',
     search_story: mainHost + '/search_story',
-    search_story_by_category: mainHost + '/search_story_by_category'
+    search_story_by_category: mainHost + '/search_story_by_category',
+    searchUserWithEmail: mainHost + '/searchUserWithEmail'
 };
 
 //$scope.showPrimaryMessage = function () {
