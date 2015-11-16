@@ -25,10 +25,12 @@
                                    ng-model="user.username">
                         </div>
                         <div class="form-group">
-                            <label for="register-email"><i class="icon-lock"></i> <b>Email</b></label>
+                            <label style="color: red;" for="register-email"><i class="icon-lock"></i> <b style="color: #535b60">Email</b>
+                                {{emailMessage}}
+                            </label>
                             <input class="form-control" id="register-email" type="text"
                                    placeholder="Enter email"
-                                   ng-model="user.email">
+                                   ng-model="user.email" ng-blur="validateEmail()">
                         </div>
                         <div class="form-group">
                             <label for="password"><i class="icon-lock"></i> <b>Password</b></label>
@@ -42,7 +44,8 @@
                                    ng-model="user.confirmPassword" ng-keyup="validatePassword()">
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary pull-right" ng-click="signupUser()">Register
+                            <button id="signUpBtn" type="submit" class="btn btn-primary pull-right"
+                                    ng-click="signupUser()">Register
                             </button>
                             <div class="clearfix"></div>
                         </div>

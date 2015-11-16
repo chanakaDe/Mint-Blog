@@ -17,6 +17,9 @@ function UserController($scope, userService, $location, $window) {
             console.log(data);
         });
 
+    /**
+     * Validate password for user security.
+     */
     $scope.validatePassword = function () {
         if ($scope.user.password != $scope.user.confirmPassword) {
             document.getElementById("password").style.backgroundColor = "#FFB2B2";
@@ -27,6 +30,26 @@ function UserController($scope, userService, $location, $window) {
         }
     };
 
+    /**
+     * Validate email. So there mustn't be same email twice in database.
+     */
+    $scope.validateEmail = function () {
+        userService.checkEmail($scope.user.email).then(function (data) {
+            if (data.data != 'null') {
+                document.getElementById("signUpBtn").disabled = true;
+                document.getElementById("register-email").style.backgroundColor = "#FFB2B2";
+                $scope.emailMessage = "Email exists. Try login";
+            } else {
+                document.getElementById("signUpBtn").disabled = false;
+                document.getElementById("register-email").style.backgroundColor = "white";
+                $scope.emailMessage = "";
+            }
+        });
+    };
+
+    /**
+     * Save new user in the database.
+     */
     $scope.signupUser = function () {
 
         $scope.errors = [];
